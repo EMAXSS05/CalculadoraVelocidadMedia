@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F0D0D"
+    tools:context=".CalculatorFragment">
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:paddingTop="40dp"
+        android:text="Calculadora de Velocidad Media"
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="280dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/card_border"
+        android:backgroundTint="@color/blue"
+        android:elevation="8dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo"
+        app:strokeColor="@android:color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="271dp"
+            android:layout_height="match_parent"
+            android:background="@color/black">
+
+            <!-- DISTANCIA -->
+            <TextView
+                android:id="@+id/text_distancia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="26dp"
+                android:text="Distancia (km):"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editDistancia"
+                android:layout_width="120dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="12dp"
+                android:backgroundTint="@color/white"
+                android:inputType="numberDecimal"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/text_distancia"
+                app:layout_constraintStart_toEndOf="@+id/text_distancia"
+                app:layout_constraintTop_toTopOf="@+id/text_distancia" />
+
+            <!-- TIEMPO -->
+            <TextView
+                android:id="@+id/text_tiempo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="26dp"
+                android:text="Tiempo (h):"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_distancia" />
+
+            <!-- RESULTADO KM/H -->
+
+            <EditText
+                android:id="@+id/editTiempo"
+                android:layout_width="120dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="36dp"
+                android:backgroundTint="@color/white"
+                android:inputType="numberDecimal"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/text_tiempo"
+                app:layout_constraintStart_toEndOf="@+id/text_tiempo"
+                app:layout_constraintTop_toTopOf="@+id/text_tiempo"
+                app:layout_constraintVertical_bias="0.652" />
+
+            <TextView
+                android:id="@+id/ResultadoKmH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="0 km/h"
+                android:textColor="@color/blue"
+                android:textSize="28sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_tiempo" />
+
+            <!-- RESULTADO M/S -->
+            <TextView
+                android:id="@+id/ResultadoMs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="0 m/s"
+                android:textColor="@color/blue"
+                android:textSize="28dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ResultadoKmH" />
+
+            <!-- ERRORES -->
+            <TextView
+                android:id="@+id/errorText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text=""
+                android:textColor="@color/crimson"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/resultado_ms" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
